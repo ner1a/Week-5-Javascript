@@ -14,26 +14,29 @@ kaydet.addEventListener("click" , function(){
     for (let i = 0; i < row.length; i++) {
         let desc = row[i].children
         for (let i = 0; i < desc.length; i++) {
-            if (i == 0) {
-                console.log("İd: "+desc[i].children[0].value);
-            }
-            else if (i == 1) {
-                console.log("İsim: "+desc[i].children[0].value);
-            }
-            else if (i == 3) {
-                console.log("Sıra: "+desc[i].children[0].value);
-            }
-            else {
-                if (desc[i].children[0].checked) {
-                    console.log("Partiye Gelecek")
-                    idlist.push({
-                        "id" : desc[0].children[0].value,
-                        "sıra" : desc[3].children[0].value
-                    })
-                } else {
-                    console.log("Partiye Gelmeyecek")
+            if (desc[2].children[0].checked == true){
+                if (i == 0) {
+                    console.log("İd: "+desc[i].children[0].value);
                 }
-            }
+                else if (i == 1) {
+                    console.log("İsim: "+desc[i].children[0].value);
+                }
+                else if (i == 3) {
+                    console.log("Sıra: "+desc[i].children[0].value);
+                }
+                else {
+                    if (desc[i].children[0].checked) {
+                        console.log("Partiye Gelecek")
+                        idlist.push({
+                            "id" : desc[0].children[0].value,
+                            "sıra" : desc[3].children[0].value
+                        })
+                    } else {
+                        console.log("Partiye Gelmeyecek")
+                    }
+                }
+           }
         }
     }
+    console.log(idlist)
 })
